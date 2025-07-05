@@ -74,7 +74,7 @@
 
 ### 사전 준비 사항
 
-* Java 17
+* Java 21
 * Gradle
 * Docker & Docker Compose
 * Git
