@@ -1,8 +1,10 @@
 package com.ticketrush.userservice.controller;
 
 import com.ticketrush.userservice.dto.ApiResponseDto;
+import com.ticketrush.userservice.dto.LoginRequestDto;
 import com.ticketrush.userservice.dto.SignUpRequestDto;
 import com.ticketrush.userservice.service.UserService;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,6 +26,12 @@ public class UserController {
         userService.signUp(requestDto);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ApiResponseDto("회원가입 성공", HttpStatus.CREATED.value()));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<ApiResponseDto> login(@RequestBody LoginRequestDto requestDto, HttpServletResponse response) {
+        userService.login(requestDto, response);
+        return ResponseEntity.ok().body(new ApiResponseDto("로그인 성공", HttpStatus.OK.value()));
     }
 
 }

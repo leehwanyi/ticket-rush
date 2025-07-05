@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PromptTemplates">
+    <option name="builtInPromptOverrides">
+      <list>
+        <BuiltInPromptOverride>
+          <option name="groupId" value="rules" />
+          <option name="promptId" value="project" />
+          <option name="text" value="[프로젝트 '티켓러시' 기본 규칙 및 명세]&#10;&#10;1. 프로젝트 개요 및 핵심 목표 (Project Vision &amp; Core Goal)&#10;&#10;프로젝트명: 티켓러시 (Ticket-Rush)&#10;&#10;핵심 목표: 마이크로서비스 아키텍처(MSA)를 기반으로, 대규모 동시 접속이 발생하는 '콘서트 티켓팅' 상황을 안정적으로 처리하는 시스템을 구축한다. 단순 기능 구현이 아닌, 확장성과 복잡성 관리에 초점을 맞춘다.&#10;&#10;2. 아키텍처 규칙 (Architecture Rules)&#10;&#10;기본 아키텍처: 마이크로서비스 아키텍처 (MSA)를 따른다. 각 서비스는 독립적으로 배포 및 확장이 가능해야 한다.&#10;&#10;서비스 간 통신:&#10;&#10;동기 통신이 필요한 경우 REST API (Spring WebClient or RestTemplate)를 사용한다.&#10;&#10;비동기 통신 및 서비스 간 결합도 완화를 위해서는 Apache Kafka를 사용한 이벤트 기반 통신을 구현한다.&#10;&#10;API Gateway: 모든 외부 요청은 반드시 Spring Cloud Gateway를 통해 들어온다. Gateway는 라우팅, 인증/인가, 로깅 등 공통 기능을 담당한다.&#10;&#10;서비스 간 접근 제어: 각 마이크로서비스는 API Gateway를 통해서 들어온 요청만 처리해야 한다. 이는 추후 공유 비밀 키(Shared Secret Key) 헤더를 검증하는 필터를 통해 구현한다.&#10;&#10;3. 기술 스택 규칙 (Tech Stack Rules)&#10;&#10;언어 및 프레임워크: Java 21, Spring Boot 3.3.x&#10;&#10;빌드 도구: Gradle (Groovy DSL, build.gradle)&#10;&#10;데이터베이스:&#10;&#10;주 데이터베이스: MySQL&#10;&#10;로컬/테스트용: H2 (In-memory)&#10;&#10;캐시 및 분산 락: Redis&#10;&#10;메시징 큐: Apache Kafka&#10;&#10;보안: Spring Security, JWT (JSON Web Token)&#10;&#10;DevOps: Docker, Docker Compose, GitHub Actions (CI/CD)&#10;&#10;4. 프로젝트 구조 및 빌드 규칙 (Project Structure &amp; Build Rules)&#10;&#10;구조: Gradle 멀티 모듈 프로젝트 구조를 따른다.&#10;&#10;부모 프로젝트: ticket-rush (루트)&#10;&#10;하위 모듈: user-service, common-core, order-service 등&#10;&#10;빌드 스크립트 역할:&#10;&#10;부모 build.gradle: 모든 모듈의 공통 설정(그룹, 버전), 플러그인 버전, 의존성 버전을 중앙에서 관리한다 (dependencyManagement). 공통 라이브러리(lombok, test)를 subprojects에 적용한다.&#10;&#10;자식 build.gradle: 자신에게만 특화된 의존성(spring-boot-starter-web 등)만 선언한다.&#10;&#10;공통 코드 관리:&#10;&#10;Timestamped 엔티티와 같이 여러 모듈에서 공유되는 코드는 common-core 모듈에 작성한다.&#10;&#10;각 서비스 모듈은 implementation project(':common-core')를 통해 공통 모듈에 의존한다.&#10;&#10;5. 핵심 엔지니어링 문제 해결 규칙 (Key Problem-Solving Rules)&#10;&#10;규칙 1 (동시성 제어): 좌석 선점과 같은 동시성 이슈는 반드시 **Redis 기반의 분산 락(Distributed Lock)**을 사용하여 해결한다.&#10;&#10;규칙 2 (분산 트랜잭션): 주문-결제-재고와 같이 여러 서비스에 걸친 트랜잭션은 **Kafka를 이용한 오케스트레이션 기반의 사가 패턴(Saga Pattern)**으로 데이터 일관성을 보장한다.&#10;    " />
+        </BuiltInPromptOverride>
+      </list>
+    </option>
+  </component>
+</project>

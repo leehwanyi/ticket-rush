@@ -7,9 +7,6 @@ spring:
     username: sa
     password: ''
 
-  # ===============================
-  # JPA Settings
-  # ===============================
   jpa:
     hibernate:
       ddl-auto: create
@@ -21,3 +18,8 @@ spring:
     console:
       enabled: true
       path: /h2-console
+
+jwt:
+  secret:
+    key: V293ci1TdG9yKS1TZWNyZXQtS2V5LVRlc3QxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwCg==
+  access-token-expiration: 3600000
