@@ -21,13 +21,13 @@
 
 ## 🛠️ 2. 기술 스택 (Tech Stack)
 
-| 구분 | 기술 |
-| :--- | :--- |
-| **Backend** | Java 17, Spring Boot 3.x, Spring Cloud Gateway, Spring Security, Spring Data JPA |
-| **Database** | MySQL, Redis |
-| **Messaging** | Apache Kafka |
-| **DevOps** | Docker, Docker Compose, GitHub Actions, (Kubernetes 개념 학습) |
-| **Tools** | IntelliJ IDEA, Gradle, Git |
+| 구분 | 기술                                                                                 |
+| :--- |:-----------------------------------------------------------------------------------|
+| **Backend** | Java 17, Spring Boot 3.5.3, Spring Cloud Gateway, Spring Security, Spring Data JPA |
+| **Database** | MySQL, Redis                                                                       |
+| **Messaging** | Apache Kafka                                                                       |
+| **DevOps** | Docker, Docker Compose, GitHub Actions, (Kubernetes 개념 학습)                         |
+| **Tools** | IntelliJ IDEA, Gradle, Git                                                         |
 
 ---
 
@@ -35,9 +35,7 @@
 
 ### 아키텍처 다이어그램
 
-*(주: 프로젝트 진행에 따라 아래 다이어그램을 직접 작성하여 업데이트합니다.)*
 
-![Architecture Diagram](https://i.imgur.com/example.png)
 
 ### 마이크로서비스 책임 및 역할
 
@@ -53,7 +51,26 @@
 
 ---
 
-## 🚀 4. 로컬 개발 환경 설정 (Local Development Setup)
+## 🤔 4. 아키텍처 설계 결정 (Architectural Decisions)
+
+### 공통관리
+
+* 문제상황
+  * 여러 마이크로서비스(user-service, order-service 등)의 엔티티가 공통으로 BaseTimeEntity(생성/수정 시간) 클래스를 상속받아야 할 때, 이 공통 코드를 어떻게 관리할 것인가?
+* 고려한 옵션들
+  * 옵션 1 : 각 서비스에 코드 복사
+    * 장점 : 서비스 간 의존성이 전혀 없어 MSA의 '완벽한 독립성' 철학에 부합함.
+    * 단점 : 코드 중복 발생. 공통 코드 수정 시 모든 서비스에 반영해야 하므로 실수가 발생하기 쉽고 유지보수가 어려움.
+  * 옵션 2 : 공통 모듈 분리
+    * 장점 : 코드를 한 곳에서 관리하므로 중복이 없고 일관성 유지가 용이함.
+    * 단점 : 모든 서비스가 common-core 모듈에 의존하게 되어 서비스 간 결합도가 소폭 증가함.
+  * 최종 결정 및 결정 사유
+    * 이 프로젝트는 포트폴리오로써, 모듈화 설계 능력과 유지보수성을 고려하는 모습을 보여주는 것이 더 중요하다고 판단했습니다. BaseTimeEntity 클래스와 같이 변경 가능성이 낮고 안정적인 코드인 경우, 결합도 증가로 인한 단점보다 중앙 관리의 이점이 더 크다고 판단했습니다.
+
+
+---
+
+## 🚀 5. 로컬 개발 환경 설정 (Local Development Setup)
 
 ### 사전 준비 사항
 
@@ -73,61 +90,3 @@
 4.  각 마이크로서비스(`user-service` 등)의 `Application.java`를 실행합니다.
 
 ---
-
-## ✅ 5. 구현 로드맵 및 체크리스트
-
-### Phase 1: 프로젝트 기초 공사 및 환경 설정
-- [x] IntelliJ 멀티 모듈 프로젝트 구조 생성 (`ticket-rush` 부모, `user-service` 자식)
-- [x] Homebrew 및 Git 설치 및 초기 설정
-- [x] 로컬 프로젝트 Git 저장소로 초기화 (`git init`)
-- [x] `.gitignore` 파일 설정
-- [x] GitHub 원격 저장소 생성 및 연동 (`git push`)
-- [ ] `docker-compose.yml` 파일 작성 (MySQL, Redis, Kafka)
-
-### Phase 2: `user-service` 구현 (인증/인가)
-- [ ] **데이터 모델링**
-    - [ ] `User` Entity 생성 (`id`, `email`, `password`, `username`, `role`)
-    - [ ] `UserRole` Enum 생성 (`USER`, `ADMIN`)
-- [ ] **데이터베이스 연동**
-    - [ ] `UserRepository` Interface 생성 (`findByEmail` 메서드 추가)
-- [ ] **API 설계**
-    - [ ] `dto` 패키지 생성
-    - [ ] `SignUpRequestDto`, `LoginRequestDto` 생성 (Validation 추가)
-- [ ] **비즈니스 로직**
-    - [ ] `UserService` 생성
-    - [ ] 회원가입 로직 구현 (이메일 중복 확인, 비밀번호 암호화)
-    - [ ] 로그인 로직 뼈대 구현
-- [ ] **API 엔드포인트**
-    - [ ] `UserController` 생성
-    - [ ] `POST /api/users/signup`, `POST /api/users/login` 엔드포인트 구현
-- [ ] **보안 설정**
-    - [ ] `config` 패키지 및 `SecurityConfig` 생성
-    - [ ] `PasswordEncoder` Bean 등록
-    - [ ] URL별 접근 권한 설정 (`signup`, `login`은 `permitAll`)
-
-### Phase 3: 핵심 서비스 기능 구현 (TBD)
-- [ ] `event-service` 구현 (공연 정보 관리)
-- [ ] `inventory-service` 구현 (좌석 재고 관리 - 동시성 처리 이전)
-- [ ] `order-service` 구현 (기본 주문 로직)
-
-### Phase 4: 핵심 문제 해결 (심화 구현) (TBD)
-- [ ] **동시성 제어:** `inventory-service`에 Redisson 분산 락 적용
-- [ ] **분산 트랜잭션:** `order-service` 중심으로 Kafka와 Saga Pattern 적용
-- [ ] **성능 최적화:** `event-service`에 Redis 캐싱 적용 및 N+1 문제 해결
-
-### Phase 5: DevOps 및 배포 (TBD)
-- [ ] 각 서비스별 `Dockerfile` 작성
-- [ ] GitHub Actions를 이용한 CI/CD 파이프라인 구축 (빌드, 테스트, 이미지 푸시 자동화)
-
----
-
-## 📖 6. API 명세 (API Specification)
-
-*(Swagger/OpenAPI 도입 전까지 Markdown으로 관리합니다.)*
-
-### User Service
-
-| Method | Endpoint | 설명 | Request Body | Success Response |
-| :--- | :--- | :--- | :--- | :--- |
-| `POST` | `/api/users/signup`| 회원가입 | `SignUpRequestDto` | `201 Created` + 성공 메시지 |
-| `POST` | `/api/users/login` | 로그인 | `LoginRequestDto` | `200 OK` + JWT |
