@@ -15,3 +15,8 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/api/events/**
+
+jwt:
+  secret:
+    key: V293ci1TdG9yKS1TZWNyZXQtS2V5LVRlc3QxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwCg==
+  access-token-expiration: 3600000

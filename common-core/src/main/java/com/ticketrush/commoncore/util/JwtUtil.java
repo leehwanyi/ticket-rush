@@ -1,6 +1,5 @@
-package com.ticketrush.userservice.util;
+package com.ticketrush.commoncore.util;
 
-import com.ticketrush.userservice.entity.UserRole;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -37,7 +36,7 @@ public class JwtUtil {
         key = Keys.hmacShaKeyFor(bytes);
     }
 
-    public String createAccessToken(String email, UserRole role){
+    public String createAccessToken(String email, String role){
         Date now = new Date();
         return BEARER_PREFIX +
                 Jwts.builder()

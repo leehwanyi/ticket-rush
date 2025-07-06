@@ -1,11 +1,11 @@
 package com.ticketrush.userservice.service;
 
+import com.ticketrush.commoncore.util.JwtUtil;
 import com.ticketrush.userservice.dto.LoginRequestDto;
 import com.ticketrush.userservice.dto.SignUpRequestDto;
 import com.ticketrush.userservice.entity.User;
 import com.ticketrush.userservice.entity.UserRole;
 import com.ticketrush.userservice.repository.UserRepository;
-import com.ticketrush.userservice.util.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -54,7 +54,7 @@ public class UserService {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
 
-        String token = jwtUtil.createAccessToken(user.getEmail(),user.getRole());
+        String token = jwtUtil.createAccessToken(user.getEmail(),user.getRole().toString());
         response.addHeader(JwtUtil.AUTHORIZATION_HEADER, token);
     }
 
