@@ -1,6 +1,6 @@
 package com.ticketrush.userservice.controller;
 
-import com.ticketrush.userservice.dto.ApiResponseDto;
+import com.ticketrush.commoncore.dto.ApiResponseDto;
 import com.ticketrush.userservice.dto.LoginRequestDto;
 import com.ticketrush.userservice.dto.SignUpRequestDto;
 import com.ticketrush.userservice.service.UserService;

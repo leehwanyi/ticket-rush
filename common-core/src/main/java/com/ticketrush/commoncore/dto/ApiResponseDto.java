@@ -1,4 +1,4 @@
-package com.ticketrush.userservice.dto;
+package com.ticketrush.commoncore.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f515b55-4344-4f3c-9312-68c059b7a3d1" name="변경" comment="api-gateway서비스 추가">
-      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/ticketrush/eventservice/entity/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    <list default="true" id="4f515b55-4344-4f3c-9312-68c059b7a3d1" name="변경" comment="event-service추가 및 종속성 설정&#10;event 도메인 설정">
+      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/ticketrush/eventservice/controller/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/ticketrush/eventservice/dto/EventRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/ticketrush/eventservice/dto/EventResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/ticketrush/eventservice/repository/EventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/ticketrush/eventservice/service/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/ticketrush/eventservice/entity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/ticketrush/eventservice/entity/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/dto/ApiResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/ticketrush/commoncore/dto/ApiResponseDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +43,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -86,6 +89,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ticketrush.commoncore.dto" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.UserServiceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="event-service" />
@@ -130,7 +138,7 @@
       <updated>1751763141451</updated>
       <workItem from="1751763142524" duration="943000" />
       <workItem from="1751764101628" duration="20000" />
-      <workItem from="1751764131677" duration="717000" />
+      <workItem from="1751764131677" duration="2906000" />
     </task>
     <task id="LOCAL-00001" summary="api-gateway서비스 추가">
       <option name="closed" value="true" />
@@ -140,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751763789307</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="event-service추가 및 종속성 설정&#10;event 도메인 설정">
+      <option name="closed" value="true" />
+      <created>1751765064410</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751765064410</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +164,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="api-gateway서비스 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-gateway서비스 추가" />
+    <MESSAGE value="event-service추가 및 종속성 설정&#10;event 도메인 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="event-service추가 및 종속성 설정&#10;event 도메인 설정" />
   </component>
 </project>
