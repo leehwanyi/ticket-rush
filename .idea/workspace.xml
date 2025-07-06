@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a59fec7-421b-4576-9896-81ce3987efd0" name="변경" comment="회원가입 기능 구현&#10;테스트용h2데이터베이스 사용">
-      <change afterPath="$PROJECT_DIR$/.idea/project.prompts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/dto/LoginRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/util/JwtUtil.java" afterDir="false" />
+    <list default="true" id="4f515b55-4344-4f3c-9312-68c059b7a3d1" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project.prompts.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ticketrush/userservice/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,52 +22,34 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;leehwanyi&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "leehwanyi"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/leehwanyi/ticket-rush.git&quot;,
-    &quot;accountId&quot;: &quot;ee95255a-b393-48a2-b707-3d681cd8ce8a&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/leehwanyi/ticket-rush.git",
+    "accountId": "ee95255a-b393-48a2-b707-3d681cd8ce8a"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="2zRGLMXT1s5Q6zvoT2xRrKQ7Ufb" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2zTlrRZVWjZWSUgwUDuIGvV4tgz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.ticket-rush 빌드.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.UserServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/hwanyi/IdeaProjects/ticket-rush",
     "node.js.detected.package.eslint": "true",
@@ -78,10 +57,6 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "com.android.studio.ml.templates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -104,39 +79,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="9a59fec7-421b-4576-9896-81ce3987efd0" name="변경" comment="" />
-      <created>1751686414721</created>
+      <changelist id="4f515b55-4344-4f3c-9312-68c059b7a3d1" name="변경" comment="" />
+      <created>1751763141451</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1751686414721</updated>
-      <workItem from="1751686416151" duration="2967000" />
-      <workItem from="1751726384428" duration="6074000" />
+      <updated>1751763141451</updated>
+      <workItem from="1751763142524" duration="551000" />
     </task>
-    <task id="LOCAL-00001" summary="common-core 프로젝트 추가 및 부모-자식 의존성 설정&#10;user-service에서 common-core 의 BaseTimeEntity 사용하도록 설정">
-      <option name="closed" value="true" />
-      <created>1751686991568</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1751686991568</updated>
-    </task>
-    <task id="LOCAL-00002" summary="회원가입 기능 구현&#10;테스트용h2데이터베이스 사용">
-      <option name="closed" value="true" />
-      <created>1751756755858</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1751756755858</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="common-core 프로젝트 추가 및 부모-자식 의존성 설정&#10;user-service에서 common-core 의 BaseTimeEntity 사용하도록 설정" />
-    <MESSAGE value="회원가입 기능 구현&#10;테스트용h2데이터베이스 사용" />
-    <option name="LAST_COMMIT_MESSAGE" value="회원가입 기능 구현&#10;테스트용h2데이터베이스 사용" />
   </component>
 </project>

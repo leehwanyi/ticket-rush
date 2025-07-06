@@ -1,3 +1,4 @@
 rootProject.name = "ticket-rush"
 include 'common-core'
 include 'user-service'
+include 'api-gateway'

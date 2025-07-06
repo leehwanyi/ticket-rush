@@ -23,3 +23,6 @@ jwt:
   secret:
     key: V293ci1TdG9yKS1TZWNyZXQtS2V5LVRlc3QxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwCg==
   access-token-expiration: 3600000
+
+server:
+  port: 8081
