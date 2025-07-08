@@ -11,10 +11,18 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/api/users/**
+          filters:
+            - RewritePath=/api/users/(?<segment>.*), /api/users/$\{segment}
+            - name: AuthorizationHeaderFilter
+              args: { }
         - id: event-service
           uri: http://localhost:8082
           predicates:
             - Path=/api/events/**
+          filters:
+            - name: AuthorizationHeaderFilter
+              args: { }
+      default-filters: []
 
 jwt:
   secret:
